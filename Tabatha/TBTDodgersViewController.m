@@ -1,28 +1,22 @@
 //
-//  TBTSecondViewController.m
+//  TBTDodgersViewController.m
 //  Tabatha
 //
+//  Created by Matte on 3/31/14.
 //  Copyright (c) 2014 mxtte. All rights reserved.
 //
 
-#import "TBTSecondViewController.h"
+#import "TBTDodgersViewController.h"
 
-@interface TBTSecondViewController ()
+@implementation TBTDodgersViewController
 
-@end
+@synthesize feedName;
 
-@implementation TBTSecondViewController
-
-- (void)viewDidLoad
-{
+- (void)viewDidLoad {
+    self.feedName = @"dodgers";
     [super viewDidLoad];
-	// Do any additional setup after loading the view, typically from a nib.
+    [self.inFormatter setDateFormat:@"EEE, dd MMMM yyyy HH:mm:ss zzz"];
 }
 
-- (void)didReceiveMemoryWarning
-{
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
-}
 
 @end

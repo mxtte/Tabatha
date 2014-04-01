@@ -2,118 +2,104 @@
 //  TBTTableViewController.m
 //  Tabatha
 //
-//  Created by xx xy on 3/31/14.
+//  Created by Matte on 3/31/14.
 //  Copyright (c) 2014 mxtte. All rights reserved.
 //
 
 #import "TBTTableViewController.h"
 
-@interface TBTTableViewController ()
-
-@end
-
 @implementation TBTTableViewController
 
-- (id)initWithStyle:(UITableViewStyle)style
+@synthesize dataSource;
+@synthesize delegate;
+@synthesize feedName;
+@synthesize channel;
+@synthesize model;
+@synthesize inFormatter;
+
+- (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
-    self = [super initWithStyle:style];
+    self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
     if (self) {
         // Custom initialization
     }
     return self;
 }
 
-- (void)viewDidLoad
-{
+- (void)viewDidLoad {
     [super viewDidLoad];
-    
-    // Uncomment the following line to preserve selection between presentations.
-    // self.clearsSelectionOnViewWillAppear = NO;
-    
-    // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-    // self.navigationItem.rightBarButtonItem = self.editButtonItem;
+    self.channel = [NSArray array];
+    dataSource = self;
+    delegate = self;
+    NSDateFormatter *_inFormatter = [[NSDateFormatter alloc] init];
+    NSLocale *enLocale = [[NSLocale alloc] initWithLocaleIdentifier:@"en"];
+    [_inFormatter setLocale:enLocale];
+    self.inFormatter = _inFormatter;
+    UIRefreshControl *refreshControl = [[UIRefreshControl alloc] init];
+    [refreshControl addTarget:self action:@selector(refreshFeed:) forControlEvents:UIControlEventValueChanged];
+    self.refreshControl = refreshControl;
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(updateFeed:) name:self.feedName object:nil];
+    TBTTabController* parentVC = (TBTTabController*)self.parentViewController;
+    self.model = parentVC.model;
+    [self.model fetchFeed:self.feedName];
 }
 
-- (void)didReceiveMemoryWarning
-{
+- (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
 
-#pragma mark - Table view data source
+- (void)updateFeed:(NSNotification*)notification {
+    [self.refreshControl endRefreshing];
+    self.channel = [notification object];
+//    [self.tableView reloadData];
+}
 
+
+#pragma mark - UITableViewDataSource
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
 {
-#warning Potentially incomplete method implementation.
-    // Return the number of sections.
-    return 0;
+	return 1;
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-#warning Incomplete method implementation.
-    // Return the number of rows in the section.
-    return 0;
+    return [self.channel count];
 }
 
-/*
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:<#@"reuseIdentifier"#> forIndexPath:indexPath];
+    NSInteger row = indexPath.row;
+    NSDictionary* currentChannelItem = self.channel[row];
     
-    // Configure the cell...
-    
+	static NSString *CellIdentifier = @"clickableCell";
+	TBTTableViewCell *cell = [self.tableView dequeueReusableCellWithIdentifier:CellIdentifier forIndexPath:indexPath];
+	if (cell == nil) {
+		cell = [[TBTTableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:CellIdentifier];
+	}
+
+    NSString *dateString = [currentChannelItem objectForKey:@"pubDate"];
+    NSDate *pubDate = [self.inFormatter  dateFromString:dateString];
+    NSDateFormatter *outFormatter = [[NSDateFormatter alloc] init];
+    NSLocale *enLocale = [[NSLocale alloc] initWithLocaleIdentifier:@"en"];
+    [outFormatter setLocale:enLocale];
+    [outFormatter setDateFormat:@"EEEE, dd MMMM"];
+    [cell.textLabel setText:[currentChannelItem objectForKey:@"title"]];
+    [cell.detailTextLabel setText:[outFormatter  stringFromDate:pubDate]];
+    cell.cellLink = [NSURL URLWithString:[currentChannelItem objectForKey:@"link"]];
+	
     return cell;
 }
-*/
 
-/*
-// Override to support conditional editing of the table view.
-- (BOOL)tableView:(UITableView *)tableView canEditRowAtIndexPath:(NSIndexPath *)indexPath
+#pragma mark UITableViewDelegate
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    // Return NO if you do not want the specified item to be editable.
-    return YES;
+    TBTTableViewCell* tempCell = (TBTTableViewCell*)[tableView cellForRowAtIndexPath:indexPath];
+    [[UIApplication sharedApplication] openURL:tempCell.cellLink];
 }
-*/
 
-/*
-// Override to support editing the table view.
-- (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath
-{
-    if (editingStyle == UITableViewCellEditingStyleDelete) {
-        // Delete the row from the data source
-        [tableView deleteRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationFade];
-    } else if (editingStyle == UITableViewCellEditingStyleInsert) {
-        // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
-    }   
+- (IBAction)refreshFeed:(id)sender {
+    [self.model refreshFeed:self.feedName];
 }
-*/
-
-/*
-// Override to support rearranging the table view.
-- (void)tableView:(UITableView *)tableView moveRowAtIndexPath:(NSIndexPath *)fromIndexPath toIndexPath:(NSIndexPath *)toIndexPath
-{
-}
-*/
-
-/*
-// Override to support conditional rearranging of the table view.
-- (BOOL)tableView:(UITableView *)tableView canMoveRowAtIndexPath:(NSIndexPath *)indexPath
-{
-    // Return NO if you do not want the item to be re-orderable.
-    return YES;
-}
-*/
-
-/*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
-{
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
-}
-*/
 
 @end

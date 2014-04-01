@@ -7,6 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		A51324EA18E738AB00FD9993 /* TBTChannelItemParser.m in Sources */ = {isa = PBXBuildFile; fileRef = A51324E918E738AB00FD9993 /* TBTChannelItemParser.m */; };
+		A51324F018E741B500FD9993 /* TBTTabController.m in Sources */ = {isa = PBXBuildFile; fileRef = A51324EF18E741B500FD9993 /* TBTTabController.m */; };
+		A51324F318E7421A00FD9993 /* TBTModel.m in Sources */ = {isa = PBXBuildFile; fileRef = A51324F218E7421A00FD9993 /* TBTModel.m */; };
+		A51324FC18E7533D00FD9993 /* TBTDodgersViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A51324F918E7533D00FD9993 /* TBTDodgersViewController.m */; };
+		A51324FD18E7533D00FD9993 /* TBTViceViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A51324FB18E7533D00FD9993 /* TBTViceViewController.m */; };
 		A581C37F18E60CCA002A9862 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A581C37E18E60CCA002A9862 /* Foundation.framework */; };
 		A581C38118E60CCA002A9862 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A581C38018E60CCA002A9862 /* CoreGraphics.framework */; };
 		A581C38318E60CCA002A9862 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A581C38218E60CCA002A9862 /* UIKit.framework */; };
@@ -14,14 +19,15 @@
 		A581C38B18E60CCA002A9862 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = A581C38A18E60CCA002A9862 /* main.m */; };
 		A581C38F18E60CCA002A9862 /* TBTAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = A581C38E18E60CCA002A9862 /* TBTAppDelegate.m */; };
 		A581C39218E60CCA002A9862 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A581C39018E60CCA002A9862 /* Main.storyboard */; };
-		A581C39518E60CCA002A9862 /* TBTFirstViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A581C39418E60CCA002A9862 /* TBTFirstViewController.m */; };
-		A581C39818E60CCA002A9862 /* TBTSecondViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A581C39718E60CCA002A9862 /* TBTSecondViewController.m */; };
 		A581C39A18E60CCA002A9862 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A581C39918E60CCA002A9862 /* Images.xcassets */; };
 		A581C3A118E60CCA002A9862 /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A581C3A018E60CCA002A9862 /* XCTest.framework */; };
 		A581C3A218E60CCA002A9862 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A581C37E18E60CCA002A9862 /* Foundation.framework */; };
 		A581C3A318E60CCA002A9862 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A581C38218E60CCA002A9862 /* UIKit.framework */; };
 		A581C3AB18E60CCA002A9862 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = A581C3A918E60CCA002A9862 /* InfoPlist.strings */; };
 		A581C3AD18E60CCA002A9862 /* TabathaTests.m in Sources */ = {isa = PBXBuildFile; fileRef = A581C3AC18E60CCA002A9862 /* TabathaTests.m */; };
+		A5B64E7A18EA5FFC003CED8E /* TBTTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A5B64E7918EA5FFC003CED8E /* TBTTableViewController.m */; };
+		A5BE5BFB18EAFCFD00FB602C /* TBTTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = A5BE5BFA18EAFCFD00FB602C /* TBTTableViewCell.m */; };
+		A5EFD16118E725E600492CB6 /* TBTXMLParserDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = A5EFD16018E725E600492CB6 /* TBTXMLParserDelegate.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -35,6 +41,16 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		A51324E818E738AB00FD9993 /* TBTChannelItemParser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = TBTChannelItemParser.h; path = ../TBTChannelItemParser.h; sourceTree = "<group>"; };
+		A51324E918E738AB00FD9993 /* TBTChannelItemParser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = TBTChannelItemParser.m; path = ../TBTChannelItemParser.m; sourceTree = "<group>"; };
+		A51324EE18E741B500FD9993 /* TBTTabController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TBTTabController.h; sourceTree = "<group>"; };
+		A51324EF18E741B500FD9993 /* TBTTabController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TBTTabController.m; sourceTree = "<group>"; };
+		A51324F118E7421A00FD9993 /* TBTModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TBTModel.h; sourceTree = "<group>"; };
+		A51324F218E7421A00FD9993 /* TBTModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TBTModel.m; sourceTree = "<group>"; };
+		A51324F818E7533D00FD9993 /* TBTDodgersViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TBTDodgersViewController.h; sourceTree = "<group>"; };
+		A51324F918E7533D00FD9993 /* TBTDodgersViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TBTDodgersViewController.m; sourceTree = "<group>"; };
+		A51324FA18E7533D00FD9993 /* TBTViceViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TBTViceViewController.h; sourceTree = "<group>"; };
+		A51324FB18E7533D00FD9993 /* TBTViceViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TBTViceViewController.m; sourceTree = "<group>"; };
 		A581C37B18E60CCA002A9862 /* Tabatha.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Tabatha.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A581C37E18E60CCA002A9862 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		A581C38018E60CCA002A9862 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -46,16 +62,18 @@
 		A581C38D18E60CCA002A9862 /* TBTAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TBTAppDelegate.h; sourceTree = "<group>"; };
 		A581C38E18E60CCA002A9862 /* TBTAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TBTAppDelegate.m; sourceTree = "<group>"; };
 		A581C39118E60CCA002A9862 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
-		A581C39318E60CCA002A9862 /* TBTFirstViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TBTFirstViewController.h; sourceTree = "<group>"; };
-		A581C39418E60CCA002A9862 /* TBTFirstViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TBTFirstViewController.m; sourceTree = "<group>"; };
-		A581C39618E60CCA002A9862 /* TBTSecondViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TBTSecondViewController.h; sourceTree = "<group>"; };
-		A581C39718E60CCA002A9862 /* TBTSecondViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TBTSecondViewController.m; sourceTree = "<group>"; };
 		A581C39918E60CCA002A9862 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		A581C39F18E60CCA002A9862 /* TabathaTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TabathaTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		A581C3A018E60CCA002A9862 /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
 		A581C3A818E60CCA002A9862 /* TabathaTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "TabathaTests-Info.plist"; sourceTree = "<group>"; };
 		A581C3AA18E60CCA002A9862 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		A581C3AC18E60CCA002A9862 /* TabathaTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TabathaTests.m; sourceTree = "<group>"; };
+		A5B64E7818EA5FFC003CED8E /* TBTTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TBTTableViewController.h; sourceTree = "<group>"; };
+		A5B64E7918EA5FFC003CED8E /* TBTTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TBTTableViewController.m; sourceTree = "<group>"; };
+		A5BE5BF918EAFCFD00FB602C /* TBTTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TBTTableViewCell.h; sourceTree = "<group>"; };
+		A5BE5BFA18EAFCFD00FB602C /* TBTTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TBTTableViewCell.m; sourceTree = "<group>"; };
+		A5EFD15F18E725E600492CB6 /* TBTXMLParserDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TBTXMLParserDelegate.h; sourceTree = "<group>"; };
+		A5EFD16018E725E600492CB6 /* TBTXMLParserDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TBTXMLParserDelegate.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -82,6 +100,36 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		A51324E418E7368500FD9993 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				A51324F118E7421A00FD9993 /* TBTModel.h */,
+				A51324F218E7421A00FD9993 /* TBTModel.m */,
+				A5EFD15F18E725E600492CB6 /* TBTXMLParserDelegate.h */,
+				A5EFD16018E725E600492CB6 /* TBTXMLParserDelegate.m */,
+				A51324E818E738AB00FD9993 /* TBTChannelItemParser.h */,
+				A51324E918E738AB00FD9993 /* TBTChannelItemParser.m */,
+			);
+			name = Model;
+			sourceTree = "<group>";
+		};
+		A51324F418E743DC00FD9993 /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				A51324EE18E741B500FD9993 /* TBTTabController.h */,
+				A51324EF18E741B500FD9993 /* TBTTabController.m */,
+				A5B64E7818EA5FFC003CED8E /* TBTTableViewController.h */,
+				A5B64E7918EA5FFC003CED8E /* TBTTableViewController.m */,
+				A5BE5BF918EAFCFD00FB602C /* TBTTableViewCell.h */,
+				A5BE5BFA18EAFCFD00FB602C /* TBTTableViewCell.m */,
+				A51324F818E7533D00FD9993 /* TBTDodgersViewController.h */,
+				A51324F918E7533D00FD9993 /* TBTDodgersViewController.m */,
+				A51324FA18E7533D00FD9993 /* TBTViceViewController.h */,
+				A51324FB18E7533D00FD9993 /* TBTViceViewController.m */,
+			);
+			name = Controllers;
+			sourceTree = "<group>";
+		};
 		A581C37218E60CCA002A9862 = {
 			isa = PBXGroup;
 			children = (
@@ -115,13 +163,11 @@
 		A581C38418E60CCA002A9862 /* Tabatha */ = {
 			isa = PBXGroup;
 			children = (
+				A51324F418E743DC00FD9993 /* Controllers */,
+				A51324E418E7368500FD9993 /* Model */,
 				A581C38D18E60CCA002A9862 /* TBTAppDelegate.h */,
 				A581C38E18E60CCA002A9862 /* TBTAppDelegate.m */,
 				A581C39018E60CCA002A9862 /* Main.storyboard */,
-				A581C39318E60CCA002A9862 /* TBTFirstViewController.h */,
-				A581C39418E60CCA002A9862 /* TBTFirstViewController.m */,
-				A581C39618E60CCA002A9862 /* TBTSecondViewController.h */,
-				A581C39718E60CCA002A9862 /* TBTSecondViewController.m */,
 				A581C39918E60CCA002A9862 /* Images.xcassets */,
 				A581C38518E60CCA002A9862 /* Supporting Files */,
 			);
@@ -205,6 +251,9 @@
 				LastUpgradeCheck = 0510;
 				ORGANIZATIONNAME = mxtte;
 				TargetAttributes = {
+					A581C37A18E60CCA002A9862 = {
+						DevelopmentTeam = 57E5KPAX6M;
+					};
 					A581C39E18E60CCA002A9862 = {
 						TestTargetID = A581C37A18E60CCA002A9862;
 					};
@@ -255,9 +304,15 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A5BE5BFB18EAFCFD00FB602C /* TBTTableViewCell.m in Sources */,
+				A51324EA18E738AB00FD9993 /* TBTChannelItemParser.m in Sources */,
 				A581C38B18E60CCA002A9862 /* main.m in Sources */,
-				A581C39818E60CCA002A9862 /* TBTSecondViewController.m in Sources */,
-				A581C39518E60CCA002A9862 /* TBTFirstViewController.m in Sources */,
+				A51324F018E741B500FD9993 /* TBTTabController.m in Sources */,
+				A51324FD18E7533D00FD9993 /* TBTViceViewController.m in Sources */,
+				A51324F318E7421A00FD9993 /* TBTModel.m in Sources */,
+				A5B64E7A18EA5FFC003CED8E /* TBTTableViewController.m in Sources */,
+				A5EFD16118E725E600492CB6 /* TBTXMLParserDelegate.m in Sources */,
+				A51324FC18E7533D00FD9993 /* TBTDodgersViewController.m in Sources */,
 				A581C38F18E60CCA002A9862 /* TBTAppDelegate.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -383,10 +438,13 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Tabatha/Tabatha-Prefix.pch";
 				INFOPLIST_FILE = "Tabatha/Tabatha-Info.plist";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Debug;
@@ -396,10 +454,13 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Tabatha/Tabatha-Prefix.pch";
 				INFOPLIST_FILE = "Tabatha/Tabatha-Info.plist";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Release;
@@ -463,6 +524,7 @@
 				A581C3B218E60CCA002A9862 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		A581C3B318E60CCA002A9862 /* Build configuration list for PBXNativeTarget "TabathaTests" */ = {
 			isa = XCConfigurationList;
@@ -471,6 +533,7 @@
 				A581C3B518E60CCA002A9862 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

@@ -2,7 +2,7 @@
 //  TBTTabController.m
 //  Tabatha
 //
-//  Created by xx xy on 3/29/14.
+//  Created by Matte on 3/31/14.
 //  Copyright (c) 2014 mxtte. All rights reserved.
 //
 
@@ -13,12 +13,12 @@
 @end
 
 @implementation TBTTabController
+@synthesize model;
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
     if (self) {
-        // Custom initialization
     }
     return self;
 }
@@ -26,24 +26,24 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    // Do any additional setup after loading the view.
+    [self configModel];
+}
+
+-(void)configModel
+{
+// Init feed settings
+    NSArray* channelItemElements = [NSArray arrayWithObjects:@"title",@"link",@"pubDate",nil];
+    NSNumber* feedCap = [NSNumber numberWithInt:5];
+    NSArray* viceFeed = [NSArray arrayWithObjects:@"vice", feedCap, [NSURL URLWithString:@"http://vice.com/rss"], channelItemElements, nil];
+    NSArray* dodgersFeed = [NSArray arrayWithObjects:@"dodgers", feedCap, [NSURL URLWithString:@"http://mlb.mlb.com/partnerxml/gen/news/rss/la.xml"], channelItemElements, nil];
+    // convert to dictionary
+    NSArray* feeds = [NSArray arrayWithObjects:viceFeed, dodgersFeed, nil];
+    self.model = [[TBTModel alloc] initWithFeeds:feeds];
 }
 
 - (void)didReceiveMemoryWarning
 {
     [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
 }
-
-/*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
-{
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
-}
-*/
 
 @end
