@@ -1,0 +1,44 @@
+//
+//  TBTChannelParser.m
+//  Tabitha
+//
+//  Copyright (c) 2014 mxtte. All rights reserved.
+//
+
+#import "TBTChannelParser.h"
+#import "TBTChannelItemParser.h"
+
+@implementation TBTChannelParser
+
+@synthesize channel;
+
+NSXMLParser* _parser;
+
+//  one for each channel coming in
+
+- (void) parser:(NSXMLParser *)parser didStartElement:(NSString *)elementName namespaceURI:(NSString *)namespaceURI qualifiedName:(NSString *)qName attributes:(NSDictionary *)attributeDict {
+    _parser = parser;
+    if ([elementName isEqualToString:@"channel"]) {
+        channel = [NSMutableArray array];
+    }
+}
+
+- (void)parser:(NSXMLParser*)parser didEndElement:(NSString *)elementName namespaceURI:(NSString *)namespaceURI qualifiedName:(NSString *)qName {
+    if ([elementName isEqualToString:@"item"]) {
+        [self makeChild:[TBTChannelItemParser class] elementName:elementName parser:parser];
+    }
+}
+
+- (void) addChannelItem:(NSDictionary *)d {
+    [channel addObject:d];
+    if ([channel count] > 4) {
+        [_parser abortParsing];
+//        [model addChannel:channel];
+    }
+}
+
+- (void) finishedChild:(NSString *)s {
+    [self addChannelItem:self.child.channelItem];
+}
+
+@end
